@@ -22,6 +22,11 @@ app.use(cors({
   credentials: true 
 }));
 
+// Route mặc định để kiểm tra API đang chạy
+app.get("/", (req, res) => {
+  res.send("Chào mừng đến với API của An Đức Anh - Backend Todo-A 🚀");
+});
+
 app.use("/api/tasks", tasksRouter);
 
 connectDB()
